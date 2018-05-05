@@ -40,14 +40,3 @@ Any edits you make to your local installation at `grav-vagrant/grav` will be imm
 If you need to use a different port than our default of 8080 for any reason (like collision with an existing service), simply edit the `host` variable in `VagrantFile` in this line: 
 
 `config.vm.network "forwarded_port", guest: 80, host: 8080`
-
--
-
-For proper URL routing, you may need to update the apache configuration at `/etc/apache2/sites-available/000-default.conf` with this extra Directory config:
-
-```
-<Directory /var/www/html>
-    AllowOverride All
-    Require all granted
-</Directory>
-```
